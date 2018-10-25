@@ -1,31 +1,34 @@
 package com.ftd.smartshare.dto;
 
-import java.io.File;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DownloadRequestDto {
+public class ViewRequestDto {
 	
 	@XmlElement(name = "fileName")
 	private String fileName;
 	
 	@XmlElement(name = "password")
 	private String password;
+
+	@XmlElement(name = "downloadsLeft")
+	private int downloadsLeft;
 	
-	public DownloadRequestDto() {}
+	@XmlElement(name = "timeLeft")
+	private long timeLeft;
 	
-	public DownloadRequestDto(String fileName, String password) {
+	public ViewRequestDto() {}
+	
+	public ViewRequestDto(String fileName, String password) {
 		super();
 		this.fileName = fileName;
 		this.password = password;
 	}
-	
+
 	public String getFileName() {
 		return fileName;
 	}
@@ -37,7 +40,7 @@ public class DownloadRequestDto {
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
